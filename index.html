@@ -1,501 +1,423 @@
-<meta nombre="palabras clave" contenido="AtläntiA, Folk Metal, Música Fantasía, Banda de Metal, Música Celta Medieval">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtläntiA | Folk Metal Oficial</title>
+    <meta name="description" content="AtläntiA - Banda de Folk Metal Fantasía. Conoce nuestra música, integrantes, fechas de conciertos y merch oficial.">
+    <meta name="keywords" content="AtläntiA, Folk Metal, Música Fantasía, Banda Metal, Conciertos Ecuador, Música Celta Medieval">
+    <meta name="author" content="AtläntiA Folk Metal">
+    <meta property="og:title" content="AtläntiA | Folk Metal Oficial">
+    <meta property="og:description" content="Banda de Folk Metal Fantasía con raíces celtas y medievales.">
+    <meta property="og:type" content="music.band">
+    <meta property="og:image" content="https://jotika92.github.io/AtlantiA-Folk-Metal/img/logo-atlantia.png"> <!-- Reemplaza con tu imagen -->
+    <meta property="og:url" content="https://jotika92.github.io/AtlantiA-Folk-Metal/">
+    <link rel="icon" href="img/favicon-atlantia.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        :root {
+            --color-oscuro: #0b1410;
+            --color-oro: #d4af37;
+            --color-oro-claro: #e6c240;
+            --color-blanco: #f5f5f5;
+            --color-gris: #333333;
+        }
 
-<title>AtläntiA Oficial | Folk Metal · Fantasía</title>
-<meta nombre="descripción" contenido="AtläntiA - Banda de Folk Metal Fantasía. Conoce a los músicos, su música y las próximas fechas.">
-<meta nombre="palabras clave" contenido="AtläntiA, Folk Metal, Música Fantasía, Banda de Metal, Música Celta Medieval">
+        body {
+            background-color: var(--color-oscuro);
+            color: var(--color-blanco);
+            line-height: 1.6;
+        }
 
-<style>
-:root{
-  --fondo:#0b1410;
-  --oro:#d4af37;
-  --oro-claro:#e6c240;
-  --verde:#3ddc84;
-  --verde-oscuro:#2a9d5c;
-  --texto:#eaeaea;
-  --texto-claro:#f5f5f5;
-}
+        /* Barra de Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 20, 16, 0.95);
+            border-bottom: 2px solid var(--color-oro);
+            z-index: 100;
+            padding: 1rem 5%;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Georgia, "Times New Roman", serif;
-  scroll-behavior: smooth;
-}
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-body{
-  background: radial-gradient(circle at top center, #1b3a2a 0%, var(--fondo) 60%);
-  color: var(--texto);
-  min-height:100vh;
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--color-oro);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
 
-/* ---------- BARRA DE NAVEGACIÓN ---------- */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(11, 20, 16, 0.9);
-  border-bottom:1px solid rgba(212, 175, 55, 0.3);
-  z-index:100;
-  padding:15px 20px;
-}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-.nav-container{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+        .nav-links a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-.nav-logo{
-  font-size:1.5rem;
-  color:var(--oro);
-  text-decoration:none;
-  letter-spacing:2px;
-}
+        .nav-links a:hover {
+            color: var(--color-oro);
+        }
 
-.nav-links a{
-  color:var(--texto);
-  text-decoration:none;
-  margin-left:25px;
-  transition:color 0.3s;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--color-oro);
+        }
 
-.nav-links a:hover{
-  color:var(--oro);
-}
+        /* Sección Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(11, 20, 16, 0.7), rgba(11, 20, 16, 0.9)), 
+                        url('img/hero-atlantia.jpg') center/cover no-repeat; /* Reemplaza con tu imagen */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            margin-top: 70px;
+        }
 
-@media(max-width:768px){
-  .nav-links{
-    display:none;
-  }
-  .nav-logo{
-    margin:auto;
-  }
-}
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--color-oro);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
 
-/* ---------- HERO SECTION ---------- */
-.hero{
-  padding:120px 20px 80px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
 
-.hero-title{
-  font-size:3.5rem;
-  letter-spacing:6px;
-  color:var(--oro);
-  margin-bottom:15px;
-  animation: fadeInDown 1s ease;
-}
+        .btn {
+            background-color: transparent;
+            border: 2px solid var(--color-oro);
+            color: var(--color-oro);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
 
-.hero-subtitle{
-  font-size:1.2rem;
-  opacity:0.9;
-  font-style:italic;
-  margin-bottom:40px;
-  animation: fadeInUp 1s ease 0.3s both;
-}
+        .btn:hover {
+            background-color: var(--color-oro);
+            color: var(--color-oscuro);
+        }
 
-/* ANIMACIONES PERSONAJES */
-.characters-container{
-  max-width:500px;
-  margin:auto;
-  position:relative;
-}
+        /* Secciones Generales */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.goblin-img{
-  width:100%;
-  border-radius:50%;
-  border:3px solid var(--oro);
-  box-shadow:0 0 40px rgba(212, 175, 55, 0.4);
-  animation: pulse 6s ease-in-out infinite;
-}
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-oro);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
 
-@keyframes pulse {
-  0%, 100% { transform:scale(1); box-shadow:0 0 40px rgba(212, 175, 55, 0.4); }
-  50% { transform:scale(1.02); box-shadow:0 0 60px rgba(212, 175, 55, 0.6); }
-}
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-oro);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.piccolo-element{
-  position:absolute;
-  top:20%;
-  right:10%;
-  width:25%;
-  animation: float 4s ease-in-out infinite;
-}
+        /* Sección Integrantes */
+        .integrantes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-@keyframes float {
-  0%, 100% { transform:translateY(0) rotate(0deg); }
-  50% { transform:translateY(-15px) rotate(5deg); }
-}
+        .integrante-card {
+            background-color: var(--color-gris);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-.piccolo-img{
-  width:100%;
-  filter:drop-shadow(0 0 15px rgba(59, 220, 132, 0.7));
-}
+        .integrante-card:hover {
+            transform: translateY(-5px);
+        }
 
-@keyframes fadeInDown {
-  from { opacity:0; transform:translateY(-30px); }
-  to { opacity:1; transform:translateY(0); }
-}
+        .integrante-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--color-oro);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
 
-@keyframes fadeInUp {
-  from { opacity:0; transform:translateY(30px); }
-  to { opacity:1; transform:translateY(0); }
-}
+        .integrante-nombre {
+            color: var(--color-oro);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
 
-/* ---------- SECCIONES GENERALES ---------- */
-.section{
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
-}
+        /* Sección Discografía */
+        .discografia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
 
-.section-title{
-  color:var(--oro);
-  font-size:2rem;
-  letter-spacing:3px;
-  text-align:center;
-  margin-bottom:40px;
-  position:relative;
-}
+        .disco-card {
+            text-align: center;
+        }
 
-.section-title::after{
-  content:"";
-  width:80px;
-  height:2px;
-  background:var(--verde);
-  position:absolute;
-  bottom:-10px;
-  left:50%;
-  transform:translateX(-50%);
-}
+        .disco-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid var(--color-oro);
+            margin-bottom: 1rem;
+        }
 
-/* ---------- BIOGRAFÍA ---------- */
-.bio-content{
-  display:flex;
-  flex-wrap:wrap;
-  gap:40px;
-  align-items:center;
-  justify-content:center;
-}
+        /* Sección Fechas */
+        .fechas-lista {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.bio-text{
-  flex:1 1 300px;
-  line-height:1.8;
-  font-size:1.1rem;
-}
+        .fecha-item {
+            background-color: var(--color-gris);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
-.bio-text strong{
-  color:var(--oro-claro);
-}
+        .fecha-fecha {
+            color: var(--color-oro);
+            font-weight: bold;
+        }
 
-.bio-img{
-  flex:1 1 300px;
-  max-width:400px;
-  border-radius:18px;
-  border:2px solid var(--oro);
-  box-shadow:0 0 30px rgba(0,0,0,0.6);
-}
+        /* Footer */
+        .footer {
+            background-color: var(--color-gris);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 2px solid var(--color-oro);
+        }
 
-/* ---------- DISCOGRAFÍA ---------- */
-.discography-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:30px;
-}
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-.album-card{
-  background:rgba(27, 58, 42, 0.3);
-  border-radius:18px;
-  padding:25px;
-  text-align:center;
-  border:1px solid rgba(212, 175, 55, 0.2);
-  transition:transform 0.3s, box-shadow 0.3s;
-}
+        .redes-sociales a {
+            color: var(--color-blanco);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
 
-.album-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
+        .redes-sociales a:hover {
+            color: var(--color-oro);
+        }
 
-.album-cover{
-  width:100%;
-  max-width:200px;
-  border-radius:12px;
-  margin-bottom:20px;
-  border:1px solid var(--oro);
-}
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-oscuro);
+                padding: 1rem 5%;
+                gap: 1rem;
+                border-bottom: 2px solid var(--color-oro);
+            }
 
-.album-title{
-  color:var(--oro);
-  margin-bottom:10px;
-}
+            .nav-links.active {
+                display: flex;
+            }
 
-.album-year{
-  opacity:0.8;
-  font-style:italic;
-  margin-bottom:15px;
-}
+            .menu-toggle {
+                display: block;
+            }
 
-.song-list{
-  list-style:none;
-  line-height:1.6;
-  text-align:left;
-  max-height:180px;
-  overflow-y:auto;
-}
-
-.song-list li::before{
-  content:"♫ ";
-  color:var(--verde);
-}
-
-/* ---------- VIDEOS ---------- */
-.videos-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-  gap:30px;
-  margin-bottom:30px;
-}
-
-.video-card{
-  background:rgba(27, 58, 42, 0.3);
-  border-radius:18px;
-  padding:20px;
-  border:1px solid rgba(212, 175, 55, 0.2);
-}
-
-.video-card iframe{
-  width:100%;
-  height:200px;
-  border-radius:12px;
-  border:none;
-  box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.video-title{
-  margin-top:15px;
-  color:var(--oro-claro);
-  text-align:center;
-}
-
-/* ---------- CONCIERTOS ---------- */
-.shows-list{
-  max-width:800px;
-  margin:auto;
-}
-
-.show-item{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px;
-  margin-bottom:15px;
-  background:rgba(27, 58, 42, 0.3);
-  border-radius:12px;
-  border-left:4px solid var(--verde);
-}
-
-.show-date{
-  color:var(--oro);
-  font-weight:bold;
-  flex:1 1 100px;
-  margin-bottom:10px;
-}
-
-.show-place{
-  flex:2 1 200px;
-  margin-bottom:10px;
-}
-
-.show-btn{
-  flex:1 1 100px;
-  text-decoration:none;
-  color:var(--texto);
-  background:var(--verde-oscuro);
-  padding:8px 15px;
-  border-radius:20px;
-  text-align:center;
-  transition:background 0.3s;
-}
-
-.show-btn:hover{
-  background:var(--verde);
-}
-
-/* ---------- CONTACTO ---------- */
-.contact-form{
-  max-width:600px;
-  margin:auto;
-  background:rgba(27, 58, 42, 0.3);
-  padding:30px;
-  border-radius:18px;
-  border:1px solid rgba(212, 175, 55, 0.2);
-}
-
-.form-group{
-  margin-bottom:20px;
-}
-
-.form-group label{
-  display:block;
-  margin-bottom:8px;
-  color:var(--oro-claro);
-}
-
-.form-group input,
-.form-group textarea{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid var(--oro);
-  background:rgba(11, 20, 16, 0.8);
-  color:var(--texto-claro);
-  font-size:1rem;
-}
-
-.form-group textarea{
-  min-height:150px;
-  resize:vertical;
-}
-
-.submit-btn{
-  display:block;
-  width:100%;
-  padding:14px;
-  background:var(--oro);
-  color:#13231c;
-  border:none;
-  border-radius:30px;
-  font-size:1.1rem;
-  font-weight:bold;
-  cursor:pointer;
-  transition:background 0.3s;
-}
-
-.submit-btn:hover{
-  background:var(--oro-claro);
-}
-
-/* ---------- FOOTER ---------- */
-footer{
-  background:rgba(11, 20, 16, 0.9);
-  border-top:1px solid rgba(212, 175, 55, 0.3);
-  padding:40px 20px;
-  text-align:center;
-}
-
-.footer-logo{
-  font-size:1.5rem;
-  color:var(--oro);
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-
-.social-links a{
-  color:var(--texto);
-  font-size:1.5rem;
-  margin:0 10px;
-  transition:color 0.3s;
-  text-decoration:none;
-}
-
-.social-links a:hover{
-  color:var(--oro);
-}
-
-.copyright{
-  margin-top:20px;
-  opacity:0.7;
-  font-size:0.9rem;
-}
-
-/* ---------- BOTÓN ARRIBA ---------- */
-.back-to-top{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background:var(--oro);
-  color:#13231c;
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  text-align:center;
-  line-height:40px;
-  text-decoration:none;
-  font-weight:bold;
-  display:none;
-  z-index:100;
-  transition:background 0.3s;
-}
-
-.back-to-top:hover{
-  background:var(--oro-claro);
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:768px){
-  .hero-title{
-    font-size:2.5rem;
-  }
-  .section-title{
-    font-size:1.6rem;
-  }
-  .piccolo-element{
-    top:15%;
-    right:5%;
-  }
-}
-</style>
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- BARRA DE NAVEGACIÓN - ENLAZADA A www.atlantiamusic.com -->
-  <nav>
-    <div class="nav-container">
-      <a href="https://www.atlantiamusic.com" target="_blank" class="nav-logo">ATLÄNTIA</a>
-      <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#bio">Biografía</a>
-        <a href="#discografia">Discografía</a>
-        <a href="#videos">Videos</a>
-        <a href="#conciertos">Conciertos</a>
-        <a href="#contacto">Contacto</a>
-        <a href="https://www.atlantiamusic.com" target="_blank">Sitio Oficial</a>
-      </div>
-    </div>
-  </nav>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">ATLÄNTIA</a>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="#discografia">Discografía</a></li>
+                <li><a href="#fechas">Fechas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- HERO SECTION - IMAGEN INTEGRADA Y ENLAZADA -->
-  <section class="hero" id="inicio">
-    <h1 class="hero-title">ATLÄNTIA</h1>
-    <p class="hero-subtitle">Folk · Fantasía · Música del Camino</p>
-    
-    <div class="characters-container">
-      <a href="https://www.atlantiamusic.com" target="_blank">
-        <img src="goblin-piccolo-arte.png" alt="Goblin y Píccolo - AtläntiA" class="goblin-img">
-      </a>
-      <!-- La animación flotante ya está en la imagen principal -->
-    </div>
-  </section>
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <h1>ATLÄNTIA FOLK METAL</h1>
+        <p>La magia de la fantasía se une al poder del metal. Música con raíces celtas, melodías épicas y energía ancestral.</p>
+        <a href="#discografia" class="btn">Escucha Nuestra Música</a>
+    </section>
 
-  <!-- BIOGRAFÍA - ENLACE A SITIO OFICIAL -->
-  <section class="section" id="bio">
-    <h2 class="section-title">NUESTRA HISTORIA</h2>
-    <div class="bio-content">
-      <div class="bio-text">
-        <p>
-          <strong>AtläntiA</strong> nace en los pasajes ocultos de Quito, cuando <strong>Goblin</strong> —juglar errante de los bosques antiguos— encontró a <strong>Píccolo</strong>, un pequeño ratón con un don único para la flauta.
-        </p>
-        <br>
-        <p>
-          Unidos por la pasión por la música celta y medieval, crearon un sonido mágico que fusiona melodías ancestrales con ritmos modernos. Su música cuenta historias de reinos olvidados, criaturas fantásticas y el camino que todos debemos recorrer en busca de la magia perdida.
-        </p>
-        <br>
-       
+    <!-- Sección Integrantes -->
+    <section class="section" id="integrantes">
+        <h2 class="section-title">INTEGRANTES</h2>
+        <div class="integrantes-grid">
+            <div class="integrante-card">
+                <img src="img/integrante1.jpg" alt="Integrante 1" class="integrante-img"> <!-- Reemplaza con tu imagen -->
+                <h3 class="integrante-nombre">Nombre Integrante</h3>
+                <p>Instrumento • Rol en la banda</p>
+            </div>
+            <div class="integrante-card">
+                <img src="img/integrante2.jpg" alt="Integrante 2" class="integrante-img"> <!-- Reemplaza con tu imagen -->
+                <h3 class="integrante-nombre">Nombre Integrante</h3>
+                <p>Instrumento • Rol en la banda</p>
+            </div>
+            <div class="integrante-card">
+                <img src="img/integrante3.jpg" alt="Integrante 3" class="integrante-img"> <!-- Reemplaza con tu imagen -->
+                <h3 class="integrante-nombre">Nombre Integrante</h3>
+                <p>Instrumento • Rol en la banda</p>
+            </div>
+            <div class="integrante-card">
+                <img src="img/integrante4.jpg" alt="Integrante 4" class="integrante-img"> <!-- Reemplaza con tu imagen -->
+                <h3 class="integrante-nombre">Nombre Integrante</h3>
+                <p>Instrumento • Rol en la banda</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Discografía -->
+    <section class="section" id="discografia">
+        <h2 class="section-title">DISCOGRAFÍA</h2>
+        <div class="discografia-grid">
+            <div class="disco-card">
+                <img src="img/disco1.jpg" alt="Álbum 1" class="disco-img"> <!-- Reemplaza con tu imagen -->
+                <h3>Nombre del Álbum</h3>
+                <p>Año • Formato: CD/Digital</p>
+                <a href="#" class="btn">Escuchar</a>
+            </div>
+            <div class="disco-card">
+                <img src="img/disco2.jpg" alt="Álbum 2" class="disco-img"> <!-- Reemplaza con tu imagen -->
+                <h3>Nombre del Álbum</h3>
+                <p>Año • Formato: CD/Digital</p>
+                <a href="#" class="btn">Escuchar</a>
+            </div>
+            <div class="disco-card">
+                <img src="img/ep1.jpg" alt="EP 1" class="disco-img"> <!-- Reemplaza con tu imagen -->
+                <h3>Nombre del EP</h3>
+                <p>Año • Formato: Digital</p>
+                <a href="#" class="btn">Escuchar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Fechas -->
+    <section class="section" id="fechas">
+        <h2 class="section-title">PRÓXIMAS FECHAS</h2>
+        <ul class="fechas-lista">
+            <li class="fecha-item">
+                <span class="fecha-fecha">15 de Marzo 2026</span>
+                <span class="fecha-lugar">Sala Rock & Folk - Quito, Ecuador</span>
+                <span class="fecha-info">Concierto en vivo + venta de merch</span>
+                <a href="#" class="btn">Comprar Entradas</a>
+            </li>
+            <li class="fecha-item">
+                <span class="fecha-fecha">29 de Abril 2026</span>
+                <span class="fecha-lugar">Festival Metal Ecuador - Guayaquil</span>
+                <span class="fecha-info">Con más bandas nacionales e internacionales</span>
+                <a href="#" class="btn">Información</a>
+            </li>
+            <li class="fecha-item">
+                <span class="fecha-fecha">18 de Mayo 2026</span>
+                <span class="fecha-lugar">Teatro Municipal - Cotacachi, Ecuador</span>
+                <span class="fecha-info">Presentación especial con elementos de fantasía</span>
+                <a href="#" class="btn">Comprar Entradas</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="redes-sociales">
+            <a href="#" target="_blank">📱 Facebook</a>
+            <a href="#" target="_blank">🎵 Instagram</a>
+            <a href="#" target="_blank">🎥 YouTube</a>
+            <a href="#" target="_blank">🎧 Spotify</a>
+        </div>
+        <p>&copy; 2026 AtläntiA Folk Metal - Todos los derechos reservados</p>
+        <p>Contacto: info@atlantia-folkmetal.com.ec</p>
+    </footer>
+
+    <!-- Script Menú Responsivo -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if(navLinks.classList.contains('active')){
+                    navLinks.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
