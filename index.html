@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtläntiA | Folk Metal Oficial</title>
-    <meta name="description" content="AtläntiA - Banda de Folk Metal Fantasía. Conoce nuestra música, integrantes, fechas de conciertos y merch oficial.">
-    <meta name="keywords" content="AtläntiA, Folk Metal, Música Fantasía, Banda Metal, Conciertos Ecuador, Música Celta Medieval">
+    <title>Goblin | AtläntiA Folk Metal</title>
+    <meta name="description" content="Goblin - Músico fundador de AtläntiA Folk Metal. Conoce su trayectoria, discografía, noticias y más.">
+    <meta name="keywords" content="Goblin, AtläntiA, Folk Metal, Música Fantasía, Banda Metal Ecuador">
     <meta name="author" content="AtläntiA Folk Metal">
-    <meta property="og:title" content="AtläntiA | Folk Metal Oficial">
-    <meta property="og:description" content="Banda de Folk Metal Fantasía con raíces celtas y medievales.">
-    <meta property="og:type" content="music.band">
-    <meta property="og:image" content="https://jotika92.github.io/AtlantiA-Folk-Metal/img/logo-atlantia.png"> <!-- Reemplaza con tu imagen -->
+    <meta property="og:title" content="Goblin | AtläntiA Folk Metal">
+    <meta property="og:description" content="Conoce a Goblin, corazón de AtläntiA Folk Metal.">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://jotika92.github.io/AtlantiA-Folk-Metal/img/goblin-principal.jpg">
     <meta property="og:url" content="https://jotika92.github.io/AtlantiA-Folk-Metal/">
     <link rel="icon" href="img/favicon-atlantia.ico" type="image/x-icon">
     <style>
@@ -55,11 +55,11 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--color-oro);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -86,42 +86,45 @@
             color: var(--color-oro);
         }
 
-        /* Sección Hero */
+        /* Sección Principal - Goblin */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(11, 20, 16, 0.7), rgba(11, 20, 16, 0.9)), 
-                        url('img/hero-atlantia.jpg') center/cover no-repeat; /* Reemplaza con tu imagen */
+            background: linear-gradient(rgba(11, 20, 16, 0.8), rgba(11, 20, 16, 0.95)), 
+                        url('img/goblin-fondo.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 5%;
-            margin-top: 70px;
+            margin-top: 65px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             color: var(--color-oro);
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+            letter-spacing: 3px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.3rem;
+            max-width: 900px;
             margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
         .btn {
             background-color: transparent;
             border: 2px solid var(--color-oro);
             color: var(--color-oro);
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .btn:hover {
@@ -134,6 +137,11 @@
             padding: 6rem 5%;
             max-width: 1200px;
             margin: 0 auto;
+            display: none; /* Ocultamos secciones hasta que se navegue a ellas */
+        }
+
+        .section.active {
+            display: block; /* Mostramos la sección seleccionada */
         }
 
         .section-title {
@@ -155,14 +163,14 @@
             transform: translateX(-50%);
         }
 
-        /* Sección Integrantes */
-        .integrantes-grid {
+        /* Estilos de Secciones Específicas */
+        .discografia-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
         }
 
-        .integrante-card {
+        .disco-card {
             background-color: var(--color-gris);
             border-radius: 8px;
             padding: 1.5rem;
@@ -170,84 +178,69 @@
             transition: transform 0.3s ease;
         }
 
-        .integrante-card:hover {
+        .disco-card:hover {
             transform: translateY(-5px);
-        }
-
-        .integrante-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--color-oro);
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        .integrante-nombre {
-            color: var(--color-oro);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Sección Discografía */
-        .discografia-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .disco-card {
-            text-align: center;
         }
 
         .disco-img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 4px;
             border: 2px solid var(--color-oro);
             margin-bottom: 1rem;
         }
 
-        /* Sección Fechas */
-        .fechas-lista {
-            list-style: none;
-            max-width: 800px;
+        .noticia-item {
+            background-color: var(--color-gris);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .noticia-fecha {
+            color: var(--color-oro);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contacto-info {
+            background-color: var(--color-gris);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .fecha-item {
+        .biografia-texto {
             background-color: var(--color-gris);
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .fecha-fecha {
-            color: var(--color-oro);
-            font-weight: bold;
+            padding: 2.5rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         .footer {
             background-color: var(--color-gris);
-            padding: 3rem 5%;
+            padding: 2rem 5%;
             text-align: center;
             border-top: 2px solid var(--color-oro);
+            margin-top: 2rem;
         }
 
         .redes-sociales {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .redes-sociales a {
             color: var(--color-blanco);
             font-size: 1.5rem;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         .redes-sociales a:hover {
@@ -278,7 +271,11 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -290,47 +287,19 @@
             <a href="#" class="logo">ATLÄNTIA</a>
             <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#integrantes">Integrantes</a></li>
                 <li><a href="#discografia">Discografía</a></li>
-                <li><a href="#fechas">Fechas</a></li>
+                <li><a href="#noticias">Noticias</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#biografia">Biografía</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Sección Hero -->
+    <!-- Sección Principal - Solo Goblin -->
     <section class="hero" id="inicio">
-        <h1>ATLÄNTIA FOLK METAL</h1>
-        <p>La magia de la fantasía se une al poder del metal. Música con raíces celtas, melodías épicas y energía ancestral.</p>
-        <a href="#discografia" class="btn">Escucha Nuestra Música</a>
-    </section>
-
-    <!-- Sección Integrantes -->
-    <section class="section" id="integrantes">
-        <h2 class="section-title">INTEGRANTES</h2>
-        <div class="integrantes-grid">
-            <div class="integrante-card">
-                <img src="img/integrante1.jpg" alt="Integrante 1" class="integrante-img"> <!-- Reemplaza con tu imagen -->
-                <h3 class="integrante-nombre">Nombre Integrante</h3>
-                <p>Instrumento • Rol en la banda</p>
-            </div>
-            <div class="integrante-card">
-                <img src="img/integrante2.jpg" alt="Integrante 2" class="integrante-img"> <!-- Reemplaza con tu imagen -->
-                <h3 class="integrante-nombre">Nombre Integrante</h3>
-                <p>Instrumento • Rol en la banda</p>
-            </div>
-            <div class="integrante-card">
-                <img src="img/integrante3.jpg" alt="Integrante 3" class="integrante-img"> <!-- Reemplaza con tu imagen -->
-                <h3 class="integrante-nombre">Nombre Integrante</h3>
-                <p>Instrumento • Rol en la banda</p>
-            </div>
-            <div class="integrante-card">
-                <img src="img/integrante4.jpg" alt="Integrante 4" class="integrante-img"> <!-- Reemplaza con tu imagen -->
-                <h3 class="integrante-nombre">Nombre Integrante</h3>
-                <p>Instrumento • Rol en la banda</p>
-            </div>
-        </div>
+        <h1>GOBLIN</h1>
+        <p>Fundador y alma creativa de AtläntiA Folk Metal. Con su virtuosismo instrumental y visión artística, fusiona las raíces celtas con el poder del metal, creando melodías épicas que transportan a mundos de fantasía y mitología ancestral.</p>
+        <a href="#biografia" class="btn">Conoce su Historia</a>
     </section>
 
     <!-- Sección Discografía -->
@@ -338,86 +307,111 @@
         <h2 class="section-title">DISCOGRAFÍA</h2>
         <div class="discografia-grid">
             <div class="disco-card">
-                <img src="img/disco1.jpg" alt="Álbum 1" class="disco-img"> <!-- Reemplaza con tu imagen -->
-                <h3>Nombre del Álbum</h3>
-                <p>Año • Formato: CD/Digital</p>
+                <img src="img/disco-atlantia.jpg" alt="Álbum AtläntiA" class="disco-img">
+                <h3>AtläntiA</h3>
+                <p>2024 • CD/Digital</p>
                 <a href="#" class="btn">Escuchar</a>
             </div>
             <div class="disco-card">
-                <img src="img/disco2.jpg" alt="Álbum 2" class="disco-img"> <!-- Reemplaza con tu imagen -->
-                <h3>Nombre del Álbum</h3>
-                <p>Año • Formato: CD/Digital</p>
+                <img src="img/disco-goblin.jpg" alt="EP Goblin" class="disco-img">
+                <h3>Goblin</h3>
+                <p>2025 • Digital</p>
                 <a href="#" class="btn">Escuchar</a>
             </div>
             <div class="disco-card">
-                <img src="img/ep1.jpg" alt="EP 1" class="disco-img"> <!-- Reemplaza con tu imagen -->
-                <h3>Nombre del EP</h3>
-                <p>Año • Formato: Digital</p>
-                <a href="#" class="btn">Escuchar</a>
+                <img src="img/disco-raices.jpg" alt="Álbum Raíces Celtas" class="disco-img">
+                <h3>Raíces Celtas</h3>
+                <p>2026 • CD/Vinilo</p>
+                <a href="#" class="btn">Próximamente</a>
             </div>
         </div>
     </section>
 
-    <!-- Sección Fechas -->
-    <section class="section" id="fechas">
-        <h2 class="section-title">PRÓXIMAS FECHAS</h2>
-        <ul class="fechas-lista">
-            <li class="fecha-item">
-                <span class="fecha-fecha">15 de Marzo 2026</span>
-                <span class="fecha-lugar">Sala Rock & Folk - Quito, Ecuador</span>
-                <span class="fecha-info">Concierto en vivo + venta de merch</span>
-                <a href="#" class="btn">Comprar Entradas</a>
-            </li>
-            <li class="fecha-item">
-                <span class="fecha-fecha">29 de Abril 2026</span>
-                <span class="fecha-lugar">Festival Metal Ecuador - Guayaquil</span>
-                <span class="fecha-info">Con más bandas nacionales e internacionales</span>
-                <a href="#" class="btn">Información</a>
-            </li>
-            <li class="fecha-item">
-                <span class="fecha-fecha">18 de Mayo 2026</span>
-                <span class="fecha-lugar">Teatro Municipal - Cotacachi, Ecuador</span>
-                <span class="fecha-info">Presentación especial con elementos de fantasía</span>
-                <a href="#" class="btn">Comprar Entradas</a>
-            </li>
-        </ul>
+    <!-- Sección Noticias -->
+    <section class="section" id="noticias">
+        <h2 class="section-title">NOTICIAS</h2>
+        <div class="noticias-lista">
+            <div class="noticia-item">
+                <span class="noticia-fecha">01 de Febrero de 2026</span>
+                <h3>Goblin anuncia nuevo álbum</h3>
+                <p>El músico reveló detalles sobre "Raíces Celtas", su próximo trabajo con temas inspirados en la mitología gallega y escocesa.</p>
+                <a href="#" class="btn">Leer Más</a>
+            </div>
+            <div class="noticia-item">
+                <span class="noticia-fecha">15 de Enero de 2026</span>
+                <h3>Presentación en Festival Metal Ecuador</h3>
+                <p>AtläntiA se presentará en la edición 2026 del festival, con un set especial a cargo de Goblin que incluirá temas inéditos.</p>
+                <a href="#" class="btn">Leer Más</a>
+            </div>
+            <div class="noticia-item">
+                <span class="noticia-fecha">20 de Diciembre de 2025</span>
+                <h3>Taller de composición con Goblin</h3>
+                <p>El músico dictará un taller gratuito sobre fusión de folk y metal en la ciudad de Cotacachi.</p>
+                <a href="#" class="btn">Leer Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="section" id="contacto">
+        <h2 class="section-title">CONTACTO</h2>
+        <div class="contacto-info">
+            <p>Para gestiones artísticas, entrevistas o reservas:</p>
+            <br>
+            <p>📧 Correo: goblin@atlantia-folkmetal.com.ec</p>
+            <p>📱 WhatsApp: +593 98 765 4321</p>
+            <br>
+            <div class="redes-sociales">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">YouTube</a>
+                <a href="#" target="_blank">Spotify</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Biografía -->
+    <section class="section" id="biografia">
+        <h2 class="section-title">BIOGRAFÍA</h2>
+        <div class="biografia-texto">
+            <p>Nacido en Cotacachi, Ecuador, Goblin desarrolló su pasión por la música desde temprana edad, influenciado por el folk local y los grandes grupos de metal internacional.</p>
+            <br>
+            <p>A los 18 años comenzó a estudiar guitarra y composición, explorando cómo fusionar las melodías celtas y andinas con el sonido pesado del metal. En 2020 fundó AtläntiA Folk Metal, con el objetivo de crear música que cuente historias de fantasía y honre las tradiciones ancestrales.</p>
+            <br>
+            <p>Además de su trabajo con la banda, Goblin ha colaborado con artistas nacionales e internacionales, y ha participado en festivales de música folk y metal en toda América Latina.</p>
+            <br>
+            <p>Su estilo único se caracteriza por el uso de instrumentos tradicionales como la gaita y el laúd, combinados con guitarras eléctricas y batería potente.</p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contacto">
-        <div class="redes-sociales">
-            <a href="#" target="_blank">📱 Facebook</a>
-            <a href="#" target="_blank">🎵 Instagram</a>
-            <a href="#" target="_blank">🎥 YouTube</a>
-            <a href="#" target="_blank">🎧 Spotify</a>
-        </div>
-        <p>&copy; 2026 AtläntiA Folk Metal - Todos los derechos reservados</p>
-        <p>Contacto: info@atlantia-folkmetal.com.ec</p>
+    <footer class="footer">
+        <p>&copy; 2026 Goblin | AtläntiA Folk Metal - Todos los derechos reservados</p>
     </footer>
 
-    <!-- Script Menú Responsivo -->
+    <!-- Script Navegación -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-links a');
 
+        // Menú responsivo
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
         });
 
-        // Scroll suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Navegación entre secciones
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                if(navLinks.classList.contains('active')){
-                    navLinks.classList.remove('active');
-                    menuToggle.textContent = '☰';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                const targetId = item.getAttribute('href');
+                
+                // Ocultar todas las secciones
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Mostrar sección seleccionada
+                document.querySelector(targetId).classList.add('active');
+                
+                // Scroll
