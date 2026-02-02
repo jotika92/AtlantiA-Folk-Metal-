@@ -1,206 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtläntiA | Folk · Fantasía · Música del Camino</title>
-    <meta name="description" content="AtläntiA - Banda de Folk y Fantasía. Música inspirada en tradiciones celtas y mundos imaginarios.">
-    <meta name="keywords" content="AtläntiA, Folk, Fantasía, Música Celta, Banda de Música, Música del Camino">
-    <link rel="icon" href="img/favicon-atlantia.ico" type="image/x-icon">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AtläntiA | Folk Rock Celta Medieval</title>
 
-        body {
-            background-color: #0b2c1c; /* Verde oscuro como en la imagen */
-            color: #f5f5f5;
-            text-align: center;
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-        /* Cabecera Superior */
-        .header-top {
-            background-color: #081f14;
-            padding: 1.2rem 0;
-            border-bottom: 2px solid #d4af37; /* Dorado */
-        }
+<style>
+:root {
+    --oro: #d4af37;
+    --verde: #2e7d32;
+    --pergamino: #f3e6c8;
+}
 
-        .header-top h1 {
-            color: #d4af37;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            font-weight: normal;
-        }
+/* RESET */
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: #2b1b00;
+    background: #000;
+}
 
-        /* Sección Principal */
-        .main-section {
-            padding: 2rem 5%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+/* FONDO CELTA GLOBAL */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      url("goblin-piccolo.png") center/120px repeat,
+      url("https://www.transparenttextures.com/patterns/celtic-knot.png");
+    opacity: 0.08;
+    pointer-events: none;
+}
 
-        .band-name {
-            color: #d4af37;
-            font-size: 3.5rem;
-            letter-spacing: 5px;
-            margin: 2rem 0 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 70px 20px;
+    color: var(--oro);
+}
 
-        .band-tagline {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            letter-spacing: 2px;
-            margin-bottom: 2.5rem;
-            font-style: italic;
-        }
+header h1 {
+    font-family: 'Uncial Antiqua';
+    font-size: 4rem;
+    text-shadow: 0 0 15px #00ff9d;
+}
 
-        /* Imagen Central */
-        .central-image {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-            border: 4px solid #d4af37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            margin-bottom: 3rem;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding-bottom: 60px;
+}
 
-        /* Sección de Contenido */
-        .content-section {
-            background-color: rgba(10, 40, 25, 0.7);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-top: 2px solid #d4af37;
-            border-bottom: 2px solid #d4af37;
-            margin-bottom: 3rem;
-        }
+.hero img {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px var(--oro);
+}
 
-        .content-title {
-            color: #d4af37;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
+/* MONEDAS */
+.coins {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .content-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.coin {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff3b0, var(--oro));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2b1b00;
+    font-weight: bold;
+    box-shadow: 0 0 20px gold;
+    animation: flotar 4s ease-in-out infinite;
+    transition: transform 0.3s;
+}
 
-        /* Menú de Navegación */
-        .nav-menu {
-            margin: 2rem 0;
-        }
+.coin:nth-child(even) { animation-delay: 1s; }
 
-        .nav-menu ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
+.coin:hover {
+    transform: scale(1.15) rotate(10deg);
+}
 
-        .nav-menu a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
 
-        .nav-menu a:hover {
-            border-color: #d4af37;
-            border-radius: 4px;
-            background-color: rgba(212, 175, 55, 0.1);
-        }
+/* SECCIONES */
+section {
+    padding: 80px 15%;
+    background: linear-gradient(#f7edd3, #e9d7a5);
+    border-top: 8px double var(--oro);
+    position: relative;
+}
 
-        /* Footer */
-        .footer {
-            background-color: #081f14;
-            padding: 1.5rem 0;
-            border-top: 2px solid #d4af37;
-            margin-top: 2rem;
-        }
+section::after {
+    content: "🍀";
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+}
 
-        .footer-text {
-            color: #d4af37;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
+section h2 {
+    font-family: 'Uncial Antiqua';
+    text-align: center;
+    font-size: 2.5rem;
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .band-name {
-                font-size: 2.5rem;
-            }
+/* GALERIA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+}
 
-            .header-top h1 {
-                font-size: 1.5rem;
-            }
+.gallery div {
+    height: 180px;
+    border: 3px solid var(--oro);
+    background: url("goblin-piccolo.png") center/contain no-repeat;
+}
 
-            .central-image {
-                max-width: 90%;
-                border-width: 3px;
-            }
+/* FOOTER */
+footer {
+    background: #000;
+    color: var(--oro);
+    text-align: center;
+    padding: 40px;
+}
 
-            .content-section {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+/* MÓVIL PERGAMINO */
+@media (max-width: 768px) {
+    body {
+        background: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    }
+    section {
+        padding: 60px 10%;
+        border-radius: 20px;
+        margin: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+}
+</style>
 </head>
+
 <body>
-    <!-- Cabecera Superior -->
-    <header class="header-top">
-        <h1>ATLÄNTIA</h1>
-    </header>
 
-    <!-- Sección Principal -->
-    <main class="main-section">
-        <h2 class="band-name">ATLÄNTIA</h2>
-        <p class="band-tagline">Folk · Fantasía · Música del Camino</p>
+<!-- MÚSICA -->
+<audio autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-        <!-- Imagen Central de Goblin -->
-        <img src="img/goblin-celtico.jpg" alt="Goblin - Alma de AtläntiA" class="central-image">
+<header>
+    <h1>AtläntiA</h1>
+    <p>Banda Juglar de Folk Rock Celta Medieval</p>
+</header>
 
-        <!-- Menú de Navegación -->
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#musica">Música</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#fechas">Fechas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+<section class="hero">
+    <img src="goblin-piccolo.png" alt="Goblin y Píccolo">
 
-        <!-- Sección de Contenido -->
-        <section class="content-section" id="sobre-nosotros">
-            <h3 class="content-title">SOBRE ATLÄNTIA</h3>
-            <p class="content-text">
-                Nacida de la pasión por la música celta, las tradiciones ancestrales y los mundos de fantasía, AtläntiA nos invita a recorrer caminos sonoros llenos de magia y emoción. Con Goblin como alma creativa, la banda fusiona instrumentos tradicionales como el violín, la gaita y el laúd con melodías épicas que transportan a quienes las escuchan a tierras lejanas y tiempos olvidados.
-            </p>
-        </section>
+    <div class="coins">
+        <a class="coin" href="#bio">Biografía</a>
+        <a class="coin" href="#discografia">Discografía</a>
+        <a class="coin" href="#galeria">Galería</a>
+        <a class="coin" href="#noticias">Noticias</a>
+        <a class="coin" href="#tienda">Tienda</a>
+        <a class="coin" href="#contacto">Contratos</a>
+    </div>
+</section>
 
-        <section class="content-section" id="musica">
-            <h3 class="content-title">NUESTRA MÚSICA</h3>
-            <p class="content-text">
-                Cada composición de AtläntiA cuenta una historia - desde leyendas celtas hasta cuentos propios creados por la banda. Nuestro sonido busca unir lo antiguo con lo moderno, creando un viaje auditivo que invita a soñar, sentir y conectarse con las raíces de la música del mundo. Pronto estrenaremos nuestro primer trabajo discográfico, cargado de energía y magia.
-            </p>
-        </section>
-    </main>
+<section id="bio">
+<h2>Biografía</h2>
+<p>
+AtläntiA surge entre leyendas, hadas y océanos antiguos.
+Goblin y Píccolo custodian su música como guardianes del trébol y la melodía.
+</p>
+</section>
 
-    <!-- Pie de Página -->
-    <footer class="footer">
-        <p class="footer-text">&copy; 2026 ATLÄNTIA - Folk · Fantasía · Música del Camino</p>
-    </footer>
+<section id="discografia">
+<h2>Discografía</h2>
+<ul>
+<li>La Atlántida (2025)</li>
+<li>Runas & Trébol</li>
+</ul>
+</section>
+
+<section id="galeria">
+<h2>Galería</h2>
+<div class="gallery">
+<div></div><div></div><div></div>
+</div>
+</section>
+
+<section id="noticias">
+<h2>Noticias</h2>
+<p>Conciertos, rituales musicales y cantos del mar eterno.</p>
+</section>
+
+<section id="tienda">
+<h2>Tienda</h2>
+<p>Arte, discos y reliquias de AtläntiA.</p>
+</section>
+
+<section id="contacto">
+<h2>Contrataciones</h2>
+<p>contacto@atlantiaoficial.com</p>
+</section>
+
+<footer>
+© 2025 AtläntiA · Goblin & Píccolo protegen este portal 🍀
+</footer>
+
 </body>
 </html>
